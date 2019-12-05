@@ -1,0 +1,106 @@
+
+/*
+#1 color = #4ACCD1;
+#2 color = #3fbbc0;
+*/
+/* ==== Google font ==== */
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600,700,800|Roboto:400,500,700,900');
+/* --- pe-icon-7-stroke --- */
+
+.bg{
+
+    min-width: 700px;
+    min-height: 400px;
+    background-image: url("https://rohealthreview.ro/wp-content/uploads/2019/07/shutterstock_146147567.jpg");
+    background-size: 100%;
+  }
+  
+
+/* ===========================
+--- Intro
+============================ */
+
+.intro {
+	width:100%;
+	position:relative;
+}
+
+.intro-content {
+	background: url(../../assets/img/dummy/bg1.jpg) no-repeat top center;
+	padding:200px 0 60px;
+	background-size: 100% 100%;
+
+}
+
+
+
+.intro-content h2 {
+	margin-bottom: 10px;
+}
+
+
+
+
+#container {
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 80px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    height: 500px;
+    }
+    #bar {
+    background-color: grey;
+    width: 900px;
+    height: 100px;
+    margin: 40px;
+    margin-left: 200px;
+    }
+    p {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    }
+    #d1 {
+    font-size: 18px;
+    margin-top: 0px;
+    background-color: white;
+    color: black;
+    width: 250px;
+    height: 50px;
+    /* width:160px;*/
+    }
+    #d2 {
+    font-size: 18px;
+    background-color: white;
+    color: black;
+    width: 320px;
+    height: 50px;
+    /*height:50px;*/
+    }
+    #b1 {
+    border-radius: 8px;
+    width: 80px;
+    height: 50px;
+    background-color: rgb(63, 187, 224);
+    border-color: rgb(63, 187, 224);
+    }
+    #p1 {
+    text-align: left;
+    margin-left: 10px;
+    padding: 15px 0;
+    color: #0095da;
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    }
+    #p2 {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    }
+    a {
+    font-size: 18px;
+    }

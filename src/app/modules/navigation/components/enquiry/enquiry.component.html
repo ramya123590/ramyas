@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<div class="container ">
+   
+  
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+              <tr>            
+                <th scope="col">UserName</th>
+                <th scope="col">Mail Id</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Message</th>
+                <th scope="col"> Respond </th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let enquiry of enquirys | async">
+                    <td>{{enquiry.userName}}</td>
+                    <td>{{enquiry.email}}</td>
+                    <td>{{enquiry.branch}}</td>
+                    <td> {{enquiry.message }}</td>
+                   
+                   
+                   
+                
+                    <td><button  (click)="replyEnquiry(enquiry.email)" class="btn btn-default"> Reply</button></td>
+
+                    <td><button  (click)="deleteEnquiry(enquiry.enquiry_id)" class="btn btn-default"> <i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                </tr>
+              
+            </tbody>
+          </table>
+    </div>
+
+</div>

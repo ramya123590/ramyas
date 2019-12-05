@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<div class="bg">
+<div class="w-100 p-3">
+    <div class="w-50 p-3" id="wid">
+        <form action="info1.html" method="get">
+            <h6 style="text-align:center">Login using below "User ID"</h6>
+            <br>
+     <!--Submit button-->
+            <button type="submit" id="registerbtn1" class="btn btn-dark" >
+                {{sharedService.user.userId}}
+            </button>
+            <br>
+            <br>
+            <br>
+            <h5 style="text-align:center">Your Account is Ready!</h5>
+            <h6 style="text-align:center;color:#607d8b">You can now log into the website with your User ID and Password</h6>
+            <h6 style="text-align:center;color:#607d8b">When visiting the hospital, please present your User ID.</h6>
+            <button type="submit" class="btn btn-primary" id="registerbtn" routerLink="/login"
+            routerLinkActive="active">Login</button>   
+        </form>
+    </div>
+</div>

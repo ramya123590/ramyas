@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<div class="container ">
+    <div class="container box1">
+     <a routerLink="/home/addDoctor"> <button class="btn btn-default btn-outline-secondary"> 
+       <i class="fa fa-plus" aria-hidden="true"></i> Add Doctor </button></a>
+    </div>
+  
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+              
+                <th scope="col">Name</th>
+                <th scope="col">Speciality</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Fee</th>
+                <th scope="col"  colspan="2">Availability</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let doctor of doctors | async">
+                    
+                    <td>{{doctor.firstName}} {{doctor.lastName }}</td>
+                    <td>{{doctor.specialist}}</td>
+                    <td> {{doctor.branch }}</td>
+                    <td>{{ doctor.fee}}</td>
+                    <td >
+                     <mat-radio-group (change)="onChange($event)" name="Availability">
+                      <mat-radio-button value="y">Yes</mat-radio-button>
+                      <mat-radio-button value="n">No</mat-radio-button>
+                    </mat-radio-group></td>
+                    
+                    
+                      
+                      <td *ngIf="isDate"> 
+                              <form [formGroup]="dateUpdate" (ngSubmit)="onSubmit(doctor.doctor_id)">
+                      <input type="date" formControlName="date"/> 
+                      <button type="submit" >Update</button>
+                              </form>
+                    </td>
+                      <td><button  (click)="deleteDoctor(doctor.doctor_id)" class="btn btn-default"> <i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                     
+                   
+                </tr>
+              
+            </tbody>
+          </table>
+    </div>
+
+</div>

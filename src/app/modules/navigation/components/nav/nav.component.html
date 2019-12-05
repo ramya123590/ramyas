@@ -1,0 +1,47 @@
+<!--link for icons-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+
+    <mat-toolbar>Menu</mat-toolbar>
+
+    <!-- Menu -->
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home/doctor"> <i class="fa fa-fw fa-user" aria-hidden="true" ></i> Doctor</a>
+      <a mat-list-item routerLink="/home/appointment"><i class="fa fa-calendar" aria-hidden="true"></i>Appointment</a>
+      <a mat-list-item routerLink="/home/admins"><i class="fa fa-credit-card"></i>Admin</a>
+      <a mat-list-item routerLink="/home/enquiry">Enquiry</a>
+      <a mat-list-item routerLink="/home/feedback">Feedback</a>
+      <a mat-list-item routerLink="/home/speciality">Speciality</a>
+      <button mat-button *ngIf="auth.isLoggednIn()" (click)="auth.logout()">Logout</button>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content  class="side-content-image mynew">
+
+      
+
+    <!-- MENU Button-->
+    <mat-toolbar color="primary"> 
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <!--Title -->
+      <span>Admin dashboard</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+
+</mat-sidenav-container>

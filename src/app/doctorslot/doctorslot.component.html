@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+    integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<div class="bg">
+    <div class="bg-dark text-white" style="font-size:120px;">
+
+        <!-- <ul class="nav nav-pills" >
+     <div class="row justify-content-center">
+         <div class="mx-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false" style="color:white;">Search for a Hospital Location</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" style="font-size:20px">Hebbal</a>
+                    <a class="dropdown-item" href="#" style="font-size:20px">Nagawara</a>
+                </div>
+            </li>
+        </div> -->
+
+
+
+        <!-- <div class="mx-auto">
+        <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false" style="color:white;">Search for a Doctor or speciality</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#" style="font-size:20px">Accident and Emergency</a>
+                <a class="dropdown-item" href="#" style="font-size:20px">Anaesthesia & Intensive Care</a>
+                <a class="dropdown-item" href="#" style="font-size:20px">Blood Bank</a>
+                <a class="dropdown-item" href="#" style="font-size:20px">Cardiology</a>
+                <a class="dropdown-item" href="#" style="font-size:20px">Cardiothoracic & Vascular Surgery</a>
+                <a class="dropdown-item" href="#" style="font-size:20px">Dental Department</a>
+                <a class="dropdown-item" href="#" style="font-size:20px">Dermatology</a>
+                <a class="dropdown-item" href="#" style="font-size:20px"> ENT Department</a>
+                <a class="dropdown-item" href="#" style="font-size:20px">Ophthalmology</a>
+                <a class="dropdown-item" href="#" style="font-size:20px">Gynaecology & Obst.</a>
+                <a class="dropdown-item" href="#" style="font-size:20px">Neurology</a>
+                <a class="dropdown-item" href="#" style="font-size:20px">Orthopaedics</a>
+                <a class="dropdown-item" href="#" style="font-size:20px">Paediatrics </a>
+                <a class="dropdown-item" href="#" style="font-size:20px">Physiotherapy</a>
+                <a class="dropdown-item" href="#" style="font-size:20px">Psychiatry </a>
+                <a class="dropdown-item" href="#" style="font-size:20px">Radiology</a>
+            </div>
+        </li>
+      </div>
+        <button type="button" class="btn btn-primary"
+            style="width:70px; background-color:#17a2b8!important;margin-bottom: 5px;"><i
+                class="fa fa-search"></i></button>
+            </div>
+            </ul>
+    -->
+
+    </div>
+
+    <div *ngFor="let val of doc">
+        <div class="container  mb-5 ">
+
+            <div class="card-group mt-5">
+                <div class="card text-dark bg-light col-sm-4 text-center">
+
+                    <img src="{{val.photo}}"
+                        class="rounded-circle w3-right: w3-margin-right w3-margin-top mx-auto d-block "
+                        alt="Cinque Terre" style="height:150x;width:150px">
+                    <div class="card-body ">
+                        <h4>Name: {{val.firstName}}</h4>
+                        <h4>specialist: {{val.specialist}}</h4>
+                        <p>Branch: {{val.branch}}</p>
+                        <p> Fees: {{val.fee}}</p>
+                    </div>
+
+                </div>
+                <div class="card text-dark bg-light  col-sm-6">
+
+                    <div class="card-body mt-5">
+
+
+                        <div class="card-footer bg-info text-right text-center text-danger w3-margin-top ">
+                            <a class="btn btn-outline-light btn-sm" (click)="onSubmit(val)">confirm your appointment</a>
+                        </div>
+                        <!-- <div class="card-footer bg-info text-right text-center text-danger w3-margin-top ">
+                    <a href="#" class="btn btn-outline-light btn-sm ">No Slot is Available</a>
+                </div> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<div class="b">
+<div class="container text-center">
+    <h3>Appointment Details:</h3>
+  <table class="table table-borderless">
+    <tr>
+        <th>User Name</th>
+        <td>{{patientdetail?.firstName}} </td>
+    </tr>
+
+
+    <tr>
+        <th>Email</th>
+        <td>{{patientdetail?.email}}</td>
+    </tr>
+
+
+    <tr>
+        <th>Phone</th>
+        <td>{{patientdetail?.phone}}</td>
+    </tr>
+
+    <tr>
+            <th>Date of Birth</th>
+            <td>{{patientdetail?.dateofbirth}}</td>
+        </tr>
+
+        <tr>
+                <th>Gender</th>
+                <td>{{patientdetail?.gender}}</td>
+            </tr>
+
+            <tr>
+                    <th>Address</th>
+                    <td>{{patientdetail?.city}}</td>
+                </tr>
+
+
+
+  </table>
+
+<button routerLink="/updatedetails" routerLinkActive="active">Edit</button>
+
+</div>
+</div>

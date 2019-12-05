@@ -1,0 +1,40 @@
+
+/*
+#1 color = #4ACCD1;
+#2 color = #3fbbc0;
+*/
+/* ==== Google font ==== */
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600,700,800|Roboto:400,500,700,900');
+/* --- pe-icon-7-stroke --- */
+
+
+/* ===========================
+--- Intro
+============================ */
+
+.intro {
+    width:100%;
+   
+	position:absolute;
+}
+
+.intro-content {
+	background: url("https://www.humanitas.net/content/uploads/2017/10/medical-care.jpg") no-repeat top center;
+    
+    padding-top:10% ;
+   
+  background-size: cover;
+}
+.bg{
+
+  min-width: 700px;
+  min-height: 400px;
+  background-image: url("https://rohealthreview.ro/wp-content/uploads/2019/07/shutterstock_146147567.jpg");
+  background-size: 100%;
+}
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- Page Container -->
+<div class="bg">
+<div class="container">
+  <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+    <!-- The Grid -->
+    <div class="w3-row">
+      <!-- Right Column -->
+      <div class="w3-col m6">
+        <div class="w3-card w3-round w3-white w3-center">
+
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container w3-padding">
+              <div class="card-header">
+                <h4 style="text-align: center;"> Select your Slot </h4>
+              </div>
+              <div class="card-body">
+                <form [formGroup]="dateandtime" (ngSubmit)="onSubmit()" >
+                  <div class="form-group">
+                    <label for="date"> Date of Appointment: </label>
+                    <div class="input-group">
+                      <input type="date" id="txtDate" required="Required" class="form-control" name="txtDate"
+                        placeholder="Select suitable date" formControlName="date" [(ngModel)]="sharedService.appointment.date" />
+                    </div>
+                    <div class="invalid-feedback">Enter valid Date of Birth</div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleSelect1">Time of Appointment</label>
+                    <select class="form-control" id="exampleSelect1" formControlName="slot" [(ngModel)]="sharedService.appointment.slot">
+                      <option>9:00-11.00</option>
+                      <option>11:00-1:00</option>
+                      <option>2:00-3:00</option>
+                      <option>3:00-5:00</option>
+                    </select>
+                  </div>
+                  <button  class="btn btn-primary btn-block" type="submit"> Next</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <!-- End Right Column -->
+      </div>
+      <div *ngIf="istrue">
+      <div class="w3-col m4">
+        <div class="w3-row-padding">
+          <div class="w3-col m12">
+            <div class="w3-card w3-round w3-white">
+              <div class="w3-container w3-padding">
+                <div class="card-header">
+                  <h4 style="text-align: center;"> Select your Slot </h4>
+                </div>
+                <br>
+                <button  class="btn btn-primary btn-block"  (click)="savevalue()"
+                 > Pay at Hospital</button>
+                <button type="submit" class="btn btn-primary btn-block"  (click)="onlinesave()"
+                routerLink="/onlinepayment"
+                  routerLinkActive="active">Pay Online</button>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- End Middle Column -->
+      </div>
+      <!-- End Grid -->
+    </div>
+    <!-- End Page Container -->
+  </div>
+  <br>
+
+</div>
+</div>

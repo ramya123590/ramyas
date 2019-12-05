@@ -1,0 +1,189 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Open Sans", sans-serif
+    }
+</style>
+
+<div class="bg">
+    <!-- Page Container -->
+    <div class="w3-container w3-content" style="max-width:1400px;">
+        <!-- The Grid -->
+        <div class="w3-row">
+            <!-- Left Column -->
+            <div class="w3-col m3">
+                <!-- Accordion to align center-->
+                <br>
+                <!-- End Left Column -->
+            </div>
+
+            <!-- Middle Column -->
+            <div class="w3-col m7">
+                <div class="w3-row-padding">
+                    <div class="w3-col m12">
+                        <div class="w3-card w3-round w3-white">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h3>Patient Registration</h3>
+                                            <hr class="w3-clear">
+                                            <form [formGroup]="registerForm" class="needs-validation"
+                                                (ngSubmit)="onSubmit()" novalidate>
+
+                                                <!--Fullname -->
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="usr">First Name: <span>*</span></label>
+                                                        <input type="text" [(ngModel)]="sharedService.user.firstName"
+                                                            formControlName="firstName" class="form-control"
+                                                            id="firstName" placeholder="Enter FirstName" required>
+                                                        <div class="invalid-feedback">Name is required</div>
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="usr">Middle Name:</label>
+                                                        <input type="text" [(ngModel)]="sharedService.user.middleName"
+                                                            formControlName="middleName" class="form-control" name="middleName"
+                                                            placeholder="Enter MiddleName" id="midname">
+
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="usr">Last Name:</label>
+                                                        <input type="text" [(ngModel)]="sharedService.user.lastName"
+                                                            formControlName="lastName" class="form-control" name="lastName"
+                                                            placeholder="Enter LastName" id="lastname">
+
+                                                    </div>
+
+                                                </div>
+
+                                                <!--Date of birth  and age-->
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="dob">Date of birth : <span>*</span></label>
+                                                        <input type="date" [(ngModel)]="this.sharedService.user.dateofbirth"
+                                                            formControlName="dob" class="form-control" name="dob"
+                                                            id="dob" placeholder="Enter date of birth" required>
+                                                        <div class="invalid-feedback">Enter valid Date of Birth</div>
+
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="age">Age: <span>*</span></label>
+                                                        <input type="number" [(ngModel)]="sharedService.user.age"
+                                                            formControlName="age" class="form-control" name="age"
+                                                            id="age" placeholder="Enter your Age" required>
+                                                        <div class="invalid-feedback">Age is required</div>
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="gender">Gender : <span>*</span> </label>
+                                                        <br>
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label">
+
+                                                                <input type="radio"
+                                                                    [(ngModel)]="sharedService.user.gender"
+                                                                    formControlName="gender" class="form-control"
+                                                                    class="form-check-input" id="gender" value="Male"
+                                                                    required>
+                                                                Male
+                                                            </label>
+                                                            <label class="form-check-label">
+                                                                <input type="radio"
+                                                                    [(ngModel)]="sharedService.user.gender"
+                                                                    formControlName="gender" class="form-control"
+                                                                    class="form-check-input" id="gender" value="Female"
+                                                                    name="gender" required>Female
+                                                            </label>
+                                                            <div class="form-check-inline">
+
+                                                                <div class="invalid-feedback">Name is required</div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <!--Email phone-->
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="phone">Phone:</label>
+                                                        <input type="tel" class="form-control"
+                                                            [(ngModel)]="sharedService.user.phone"
+                                                            formControlName="phone" pattern="[1-9]{1}[0-9]{9}"
+                                                            name="phone" id="phone" maxlength="10"
+                                                            placeholder="Enter Phone Number" required>
+                                                        <div class="invalid-feedback">Enter Valid Phone number</div>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="email">Email: <span>*</span></label>
+                                                        <input type="email" [(ngModel)]="sharedService.user.email"
+                                                            class="form-control" name="email" id="email"
+                                                            formControlName="email" pattern=".+@gmail.com"
+                                                            placeholder="Enter Your Email" required>
+                                                        <div class="invalid-feedback">Enter Valid Email</div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-12">
+                                                        <label for="address">Address: <span>*</span></label>
+                                                            <input type="text" [(ngModel)]="sharedService.user.address"
+                                                                class="form-control" name="address"
+                                                                formControlName="address" id="address"
+                                                                placeholder="Enter Address" required>
+                                                            <div class="invalid-feedback">Address is required</div>
+                                                    </div>
+                                                </div>
+                                                <!--Address -->
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="city">City: <span>*</span></label>
+                                                        <input type="text" [(ngModel)]="sharedService.user.city"
+                                                            formControlName="city" class="form-control" name="city"
+                                                            id="city" placeholder="Enter City" required>
+                                                        <div class="invalid-feedback">City is required</div>
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="state">State: <span>*</span></label>
+                                                        <input type="text" [(ngModel)]="sharedService.user.state"
+                                                            formControlName="state" class="form-control" name="state"
+                                                            id="state" placeholder="Enter State" required>
+                                                        <div class="invalid-feedback">State is required</div>
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="pin">Pincode: <span>*</span></label>
+                                                        <input type="text" [(ngModel)]="sharedService.user.pincode"
+                                                            formControlName="pincode" class="form-control"
+                                                            name="pincode" id="pin" placeholder="Enter PinCode"
+                                                            required>
+                                                        <div class="invalid-feedback">Pincode is required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="mx-auto">
+                                                    <button type="submit"
+                                                        class="btn btn-primary text-right">Next</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

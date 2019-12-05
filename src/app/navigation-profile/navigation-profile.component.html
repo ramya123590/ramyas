@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<div  class= "bg-light text-dark"style="font-size:20px">
+       
+    <!-- Content here -->
+    <ul class="nav nav-pills">  
+        	<li class="nav-item">
+                    <a class="">People's Health</a>
+                </li>
+                <li> <a    role="button" aria-haspopup="true"
+                    aria-expanded="false"routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+               
+            
+        <li class="nav-item dropdown " style="margin-left: 72%;" >
+                
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true"
+                aria-expanded="false">{{patientdetail?.firstName}}</a>
+
+            <div class="dropdown-menu" >
+                <a class="dropdown-item"  style="font-size:20px" routerLink="/profile" routerLinkActive="active">View Profile</a>
+                <button  class="dropdown-item" href="#"style="font-size:20px" *ngIf="auth.isLoggednIn()" (click)="auth.logout()">Logout</button>
+            </div>
+        </li>     
+              
+    </ul>
+</div>
+
+
+
+

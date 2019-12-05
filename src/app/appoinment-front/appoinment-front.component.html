@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.7.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<div class="bg mt-0">
+<br>
+<div class="container">
+  
+       
+   
+    <div class="jumbotron " style="width:fit-content; margin-top: 5%;margin-left:18%">
+
+        <div class="row custom-wrapper">
+            <!-- Form starts -->
+            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+                    <h3 style="text-align: center;margin-top: 1%;">Book an appointment with us</h3>
+                    <hr>
+                <div class="group-gap">
+                    <div class="d-block my-3">
+                        <div class="col-md-4">
+                            <!--city validation-->
+                            <div class="mb-2">
+                                    <select class="form-control round" (change)="changeCity($event)" [(ngModel)]="sharedService.doctor.branch"formControlName="branch">
+                                            <option value="" default disabled>Choose your city</option>
+                                            <option    >Hebbal</option>
+                                            <option    >Nagavara</option>
+                                           
+                                        </select>
+
+                                <!-- error block -->
+                                <div class="invalid-feedback" *ngIf="isSubmitted && cityName.errors?.required">
+                                    <sup>*</sup>Please enter your city name
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+
+                            <!--spl validation-->
+                            <div class="mb-3">
+                                    <select class="form-control round"  (change)="changeSpl($event)"  [(ngModel)]="sharedService.doctor.specialist" formControlName="specialist">
+                                            <option [ngValue]="" default disabled>Choose your specialist</option>
+                                            <option *ngFor="let specaility of specialists" [value]="specaility">
+                                                    {{specaility}}
+                                                  </option>
+                                            <!-- <option *ngFor="let spl of spcl" [ngValue]="spl.specialist">{{spl.specialist}}</option>-->
+                                            <!-- <option >Dental</option>
+                                           <option>Pediatrician</option>
+                                            <option>Cardiologist</option>
+                                            <option>ENT</option> -->
+                                        </select> 
+
+                                <!-- error block -->
+                                <div class="invalid-feedback" *ngIf="isSubmitted && splName.errors?.required">
+                                    <sup>*</sup>Please enter splecialist
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3">
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary ">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form><!-- Form ends -->
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<div class="bg">
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <div class="card" style="width:65%;margin-top:30px ">
+        <div class="card-header">
+          <h4 style="text-align: center;"> Online Payment</h4>
+        </div>
+        <div class="card-body">
+
+
+          <div class="container">
+
+            <form ngNoForm action="https://test.payu.in/_payment" name="payuform" method="POST" target="payment_popup"
+              onsubmit="window.open('about:blank','payment_popup','width=900,height=500');">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="firstname">Name:</label>
+                  <input type="text" class="form-control" id="firstname" name="firstname"
+                    [(ngModel)]="payuform.firstname">
+                </div>
+              </div>
+              <div class="col-md-6">
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="payuform.email">
+              </div>
+              </div>
+              <div class="col-md-6">
+              <div class="form-group">
+                <label for="email">Phone:</label>
+                <input type="number" class="form-control" id="phone" name="phone" [(ngModel)]="payuform.phone">
+              </div>
+              </div>
+              <div class="col-md-6">
+              <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="number" class="form-control" id="amount" name="amount"  [(ngModel)]="this.sharedservice.doctor.fee" readonly>
+              </div>
+              </div>
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="productInfo">Remark:</label>
+                    <input type="textarea" class="form-control" id="productInfo" name="productinfo"
+                      [(ngModel)]="payuform.productinfo" >
+                  </div>
+                </div>
+              <textarea name="surl" id="surl" ng-model="surl" rows="2" cols="2" hidden
+                [(ngModel)]="payuform.surl"></textarea>
+              <textarea name="furl" id="furl" ng-model="furl" rows="2" cols="2" hidden
+                [(ngModel)]="payuform.furl"></textarea>
+              <textarea name="key" id="key" ng-model="key" rows="2" cols="2" hidden
+                [(ngModel)]="payuform.key"></textarea>
+              <textarea name="hash" id="hash" ng-model="hash" rows="2" cols="2" hidden
+                [(ngModel)]="payuform.hash"></textarea>
+              <textarea name="txnid" id="txnid" ng-model="txnid" rows="2" cols="2" hidden
+                [(ngModel)]="payuform.txnid"></textarea>
+              <textarea name="service_provider" id="service_provider" rows="2" cols="2" hidden></textarea>
+              <button *ngIf="disablePaymentButton" type="button" class="btn btn-default"
+                (click)="confirmPayment()">Confirm</button>
+              <button *ngIf="!disablePaymentButton" type="submit" class="btn btn-danger">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

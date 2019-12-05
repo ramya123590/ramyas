@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<div class="b" >
+<div class="container text-center">
+    <div *ngIf="appointment?.length;else no_data_templ">
+    <h3>Appointment Details:</h3>
+  <table class="table table-borderless" *ngFor="let val of appointment">
+   
+      <tr>
+        <th>Name</th>
+        <td>{{val.patientregistration.firstName}}</td>
+       
+      </tr>
+    
+ 
+      <tr>
+        <th>Date of appointment</th>
+        <td>{{val.date}}</td>
+       
+      </tr>
+      <tr>
+        <th>Time</th>
+        <td>{{val.slot}}</td>
+       
+      </tr>
+      <tr>
+        <th>Doctor_details</th>
+        <td>{{val.doctorregistration.firstName}}</td>
+       
+      </tr>
+      <tr aria-rowspan="2">
+          <td colspan="2">
+            <span class="button is-small btn-danger" (click)='deleteappointment(val.id)'>Cancel your appointment</span>
+        </td>
+      </tr>
+    
+  </table>
+</div>
+<div class="container text-center">
+    <table class="table table-borderless " style="margin-top: 10%;">
+      <tr>
+        <th>Sorry!!, No data was found</th>
+        <td style="text-align: center;padding-right: 1%;">
+          <ng-template #no_data_templ>
+            <h2 style="align-content: center;"> </h2>
+          </ng-template>
+        </td>
+      </tr>
+      </table>
+  </div>
+</div>
+</div>
+

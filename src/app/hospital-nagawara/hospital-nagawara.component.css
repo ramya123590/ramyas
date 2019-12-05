@@ -1,0 +1,35 @@
+
+/*
+#1 color = #4ACCD1;
+#2 color = #3fbbc0;
+*/
+/* ==== Google font ==== */
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600,700,800|Roboto:400,500,700,900');
+/* --- pe-icon-7-stroke --- */
+
+
+/* ===========================
+--- Intro
+============================ */
+
+.intro {
+    width:100%;
+   
+	position:relative;
+}
+
+.intro-content {
+	background: url(../../assets/img/dummy/bg1.jpg) no-repeat top center;
+ 
+    width:100%;
+   
+
+    padding-top:100px ;
+    padding-bottom: 50px;
+     background-size: 100% 100%;
+}
+
+
+
+
+

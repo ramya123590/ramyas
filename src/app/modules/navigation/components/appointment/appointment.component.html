@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<div class="container content" *ngFor="let val of appointment">
+        <table class="table ">
+                <thead>
+                  <tr>
+                    <th>Patient Name</th>
+                    <th>Doctor Name</th>
+                    <th>Date</th>
+                    <th>slot</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{val.patientregistration.firstName}}</td>
+                    <td>{{val.doctorregistration.firstName}}</td>
+                    <td>{{val.date}}</td>
+                    <td>{{val.slot}}</td>
+                    <td> <i class="fa fa-trash" aria-hidden="true"></i></td>
+                  </tr>
+             
+                </tbody>
+              </table>
+            </div>
+            
