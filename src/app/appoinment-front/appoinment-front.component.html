@@ -3,12 +3,8 @@
 <div class="bg mt-0">
 <br>
 <div class="container">
-  
-       
-   
     <div class="jumbotron " style="width:fit-content; margin-top: 5%;margin-left:18%">
-
-        <div class="row custom-wrapper">
+          <div class="row custom-wrapper">
             <!-- Form starts -->
             <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
                     <h3 style="text-align: center;margin-top: 1%;">Book an appointment with us</h3>
@@ -18,7 +14,8 @@
                         <div class="col-md-4">
                             <!--city validation-->
                             <div class="mb-2">
-                                    <select class="form-control round" (change)="changeCity($event)" [(ngModel)]="sharedService.doctor.branch"formControlName="branch">
+                                    <select class="form-control round" (change)="changeCity($event)" 
+                                    [(ngModel)]="sharedService.doctor.branch"formControlName="branch" required>
                                             <option value="" default disabled>Choose your city</option>
                                             <option    >Hebbal</option>
                                             <option    >Nagavara</option>
@@ -36,7 +33,8 @@
 
                             <!--spl validation-->
                             <div class="mb-3">
-                                    <select class="form-control round"  (change)="changeSpl($event)"  [(ngModel)]="sharedService.doctor.specialist" formControlName="specialist">
+                                    <select class="form-control round"  (change)="changeSpl($event)"  
+                                    [(ngModel)]="sharedService.doctor.specialist" formControlName="specialist"required>
                                             <option [ngValue]="" default disabled>Choose your specialist</option>
                                             <option *ngFor="let specaility of specialists" [value]="specaility">
                                                     {{specaility}}

@@ -67,6 +67,7 @@ export class AppoinmentFrontComponent  {
   onSubmit() {
     this.isSubmitted = true;
     if (!this.registrationForm.valid) {
+      alert("Please select City and Specialist")
       return false;
     } else {
       console.log(JSON.stringify(this.sharedService.doctor.branch));

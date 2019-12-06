@@ -79,7 +79,7 @@ this.specialistService.getAllbranchtNames().pipe(finalize(()=>{
   }
 else{
     alert("This "+branch+"branch is doesnot exists")
-    branch=null;
+    return
   }
       
 })).subscribe(data=>{this.allbranch=data;

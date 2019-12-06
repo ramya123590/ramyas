@@ -42,19 +42,15 @@ export class ForgotpasswordComponent implements OnInit {
       }, false);
     })();
   }
-    
-  
-
   onSubmit() {
     this.submitted = true;
-    
-    // stop here if form is invalid
+      // stop here if form is invalid
        if (this.forgotpasswordForm.invalid) {
            return;
        }
        else
        {
-     
+
         var Email = this.forgotpasswordForm.controls['email'].value;
         console.log(Email);
         this.patientemail.email=Email;
@@ -65,9 +61,11 @@ export class ForgotpasswordComponent implements OnInit {
             this.loginService.forgotpassword(Email).subscribe(data => console.log(data) 
             ,  error => console.log(error));
             alert("Password email sent to your registered email Id. Check that email and follow the instruction to reset password ")
+            this.router.navigate(['login'])
           }
           else{
             alert("Not registered email please signup Or enter registered email")
+            this.router.navigate(['login'])
           }
         })).subscribe(data=>{this.patientemail=data})
         
