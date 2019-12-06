@@ -6,6 +6,9 @@ import { Doctor } from '../../models/doctor';
 import { Speciality } from '../../models/speciality';
 import { Observable } from 'rxjs';
 import { SpecialityService } from '../../services/speciality.service';
+import { Branch } from '../../models/branch';
+import { finalize } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-adddoctor',
@@ -18,7 +21,8 @@ export class AdddoctorComponent implements OnInit {
   secondFormGroup: FormGroup;
 
   specialists: Observable<Speciality[]>;
-
+  allbranch: Branch[]
+  count:boolean=false
   constructor(private doctorService:DoctorService,private _formBuilder: FormBuilder 
     , private  specialistService:SpecialityService) {}
 
@@ -65,13 +69,33 @@ export class AdddoctorComponent implements OnInit {
     let specialist = this.secondFormGroup.controls['specaility'].value;
     let branch = this.secondFormGroup.controls['branch'].value;
     let fee = this.secondFormGroup.controls['fee'].value;
+this.specialistService.getAllbranchtNames().pipe(finalize(()=>{
 
-
+  if(this.count){
     let doctor = new Doctor(firstName , lastName , gender , photo,fee , specialist , branch);
     console.log(doctor);
     this.doctorService.createDoctor(doctor).subscribe(data => console.log(data) 
     ,  error => console.log(error))
   }
+else{
+    alert("This "+branch+"branch is doesnot exists")
+    branch=null;
+  }
+      
+})).subscribe(data=>{this.allbranch=data;
+for (let branchname of this.allbranch) {
+  console.log(branchname.branchName);
+
+  if(branch==branchname.branchName){
+     this.count=true;
+  }
+  console.log(this.count)
+  
+}})
+
+
+  }
+
 
   form1(){
     console.log(this.firstFormGroup.value);

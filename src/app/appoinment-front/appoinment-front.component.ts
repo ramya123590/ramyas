@@ -72,6 +72,8 @@ export class AppoinmentFrontComponent  {
       console.log(JSON.stringify(this.sharedService.doctor.branch));
       console.log(this.sharedService.doctor.specialist);
       this.router.navigate(['doctorslot'])
+
+     
     }
 
   }

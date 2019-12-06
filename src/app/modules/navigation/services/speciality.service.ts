@@ -7,12 +7,14 @@ import { Observable } from 'rxjs';
 })
 export class SpecialityService {
   private baseUrl ='http://localhost:9081/api/speciality';
+  private  branchUrl='http://localhost:9081/api/branch';
 
   constructor(private http: HttpClient) { }
 
   getSpecaility(id: number): Observable<Object> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
+  
 
   createSpecaility(speciality: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, speciality);
@@ -32,5 +34,8 @@ export class SpecialityService {
 
   getAllSpecialistNames(): Observable<any> {
     return this.http.get(`http://localhost:9081/api/speciality/names`);
+  }
+  getAllbranchtNames(): Observable<any> {
+    return this.http.get(`http://localhost:9081/api/branch`);
   }
 }

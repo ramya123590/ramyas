@@ -29,12 +29,7 @@ export class DoctorslotComponent{
     this.doctorService.findBybranchandspec(this.sharedService.doctor).pipe(finalize(()=>{for (const val of this.doc) {
       console.log(val.lastName);
       
-    }})).subscribe(data=>{if(data!=null){
-      this.doc=data}
-      else{
-alert("hhh")
-      }
-      })
+    }})).subscribe(data=>{this.doc=data})
   }
   onSubmit(doctor:Doctor){
 

@@ -40,6 +40,8 @@ import { AppointmentDetailsComponent } from './appointment-details/appointment-d
 import { UserdetailupdateComponent } from './userdetailupdate/userdetailupdate.component';
 import {MaterialModule} from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 
 @NgModule({
@@ -75,6 +77,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppointmentDetailsComponent,
 
     UserdetailupdateComponent,
+
+    ForgotpasswordComponent,
+
+    ResetpasswordComponent,
     
     
   ],

@@ -20,6 +20,8 @@ import { AuthGuard } from './auths/auth.guard';
 import { ProfileComponent } from './profile/profile.component';
 import { AppointmentDetailsComponent } from './appointment-details/appointment-details.component';
 import { UserdetailupdateComponent } from './userdetailupdate/userdetailupdate.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 
 const routes: Routes = [
@@ -88,6 +90,16 @@ const routes: Routes = [
     path:'userId',
     component:UserIdComponent,
     data: {  showHeader: false ,shownav:false}
+  },
+  {
+    path:'forgotpassword',
+    component:ForgotpasswordComponent,
+    data: {  showHeader: false ,shownav:false} 
+  },
+  {
+    path:'resetPassword',
+    component:ResetpasswordComponent,
+    data: {  showHeader: false ,shownav:false} 
   },
   {
     path:'doctorslot',
