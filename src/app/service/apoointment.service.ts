@@ -32,7 +32,7 @@ export class ApoointmentService {
     return this.http.post<Appointment>(this.usersUrl, user);
   }
   public notAvailable(user: Appointment): Observable<any> {
-    return this.http.post("http://b8java09.iiht.tech:8050/spring_enity_design/api/appointments", user);
+    return this.http.post("http://localhost:1234/api/appointments", user);
   }
   deleteAppointment(id: Number): Observable<any> {
     return this.http.delete(`${this.usersUrl}/${id}`, { responseType: 'text' });

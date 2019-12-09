@@ -30,7 +30,7 @@ export class DoctorService {
   }
 
   getDoctorList(): Observable<any> {
-    return this.http.get("http://b8java09.iiht.tech:8050/spring_enity_design/api/doctorregister");
+    return this.http.get("http://localhost:1234/api/doctorregister");
   }
 
 
