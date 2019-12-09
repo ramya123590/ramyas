@@ -70,6 +70,7 @@ export class ResetpasswordComponent implements OnInit {
             this.loginService.resetpassword(this.patient).subscribe(data => console.log(data) 
             ,  error => console.log(error));
             alert("New Password has been Created ")
+            this.router.navigate(['login'])
             
           }
           else{
